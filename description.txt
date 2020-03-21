@@ -1,0 +1,13 @@
+ETL Project Write-Up
+
+Pulls active COVID-19 data from an online repository, using a live URL. 
+The data pulled does not included all-country stats for every single country and also includes specific cities for others. 
+I separate the data into four databases: 
+	one that gives each location a unique key
+	one that includes only states
+	one that includes only cities
+	one that includes only countries
+The final database required a groupby, because where states were provided, all-country numbers were not. 
+The groupby groups and sums the states to return all-country statistics. 
+
+I sent that data to SQL, using a replace, because the data is being updated live.
